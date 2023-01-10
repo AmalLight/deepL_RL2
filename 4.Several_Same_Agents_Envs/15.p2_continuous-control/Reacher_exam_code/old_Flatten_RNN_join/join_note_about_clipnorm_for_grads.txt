@@ -1,0 +1,9 @@
+# https://www.tensorflow.org/api_docs/python/tf/clip_by_norm # it is == np.clip with only max value + Norm
+
+grads = tape.gradient ( loss , [ self.network.model.trainable_variables , std ] )
+print ( np.array ( grads [ 0 ] ).shape , grads [ 1 ].shape , grads [ 1 ] ) # (8,)=list && (4,)=array
+grad = [ tf.clip_by_norm ( t = w , clip_norm = 5 ) for w in grads [ 0 ] + [ grads [ 1 ] ] ] # alternative to TAU in DQN,
+                                                                                            # but also it is the reverse, avoid low values
+
+self.network.optimizer.apply_gradients ( zip ( grad , self.network.model.trainable_variables + [ std ] ) )
+is possible to set the clipnorm in the Adam optimizer

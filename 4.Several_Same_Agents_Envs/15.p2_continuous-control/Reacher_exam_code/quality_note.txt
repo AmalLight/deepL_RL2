@@ -1,0 +1,12 @@
+quality = tf.math.reduce_mean ( probs - new_probs )
+
+# for each line: if>0: old_probs > new_probs iff log_sum ( x_old_perc ) > log_sum ( y_new_perc ) sse x < y
+               # if<0: old_probs < new_probs iff log_sum ( x_old_perc ) < log_sum ( y_new_perc ) sse y > x
+               #
+               # log_sum_old - log_sum_new == log_sum ( old_perc / new_perc )
+
+# -0.001 == log ( 0.999% )
+# log (x) < -0.001 --> x < 0.999% --> exp ( -0.001 ) = 0.999%
+# log (x/y) with trend: increase in y and decrease in x --> y bigger than x
+#
+# log(1.001%) = 0.001

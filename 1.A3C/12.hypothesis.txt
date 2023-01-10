@@ -1,0 +1,9 @@
+A(3/2)C = % by: future_rewards/entropy/Policy_Method
+          or QUANTITY definition by model           + TABLE of rewards by TD(sarsa) or MC USING MULTI_AGENT -> NO MEMORY
+  DDPG  =    QUANTITY definition by model           +          rewards by DQN             USING                   MEMORY
+
+* QUANTITY definition by model = GOOD_FOR_CONTINUOS_ACTIONS
+
+CONTINUOS_ACTIONS = STOCKs Quantity for each exchange BY stocks_id
+                  = memory for CONTINUOS actions we chose: Predict ( states ) -> Quantities  | len ( Quantities ) = c | c = len ( stocks id )
+                                                                              -> Quantities -> rewards                | c = len ( rewards   )
